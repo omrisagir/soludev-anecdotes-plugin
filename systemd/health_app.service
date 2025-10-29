@@ -1,0 +1,15 @@
+[Unit]
+Description=Health endpoint for SoluDev plugin
+After=network.target
+
+
+[Service]
+Type=simple
+WorkingDirectory=/home/omrisagir/soludev_plugin
+ExecStart=/home/omrisagir/soludev_plugin/venv/bin/python /home/omrisagir/soludev_plugin/health_app.py
+User=omrisagir
+Restart=on-failure
+
+
+[Install]
+WantedBy=multi-user.target
