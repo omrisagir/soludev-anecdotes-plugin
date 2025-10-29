@@ -1,0 +1,16 @@
+[Unit]
+Description=SoluDev → Anecdotes Plugin
+Wants=network-online.target
+After=network-online.target
+
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/omrisagir/soludev_plugin
+EnvironmentFile=/etc/default/soludev_plugin
+ExecStart=/home/omrisagir/soludev_plugin/venv/bin/python /home/omrisagir/soludev_plugin/soludev_anecdotes_plugin.py
+User=omrisagir
+
+
+[Install]
+WantedBy=multi-user.target
